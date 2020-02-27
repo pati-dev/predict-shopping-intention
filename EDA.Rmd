@@ -1,0 +1,21 @@
+---
+title: "EDA"
+author: "Ankit Mathur"
+date: "2/27/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, tidy = TRUE, warning = FALSE)
+```
+
+```{r include=FALSE}
+library(tidyverse)
+cb_palette = c("#F0E442", "#56B4E9", "#009E73", "#0072B2", "#D55E00", "#CC79A7", "#E69F00", "#999999")
+```
+
+```{r}
+data = read.csv("online_shoppers_intention.csv")
+```
+
+
