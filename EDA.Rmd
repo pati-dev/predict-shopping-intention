@@ -15,7 +15,110 @@ cb_palette = c("#F0E442", "#56B4E9", "#009E73", "#0072B2", "#D55E00", "#CC79A7",
 ```
 
 ```{r}
-data = read.csv("online_shoppers_intention.csv")
+shop = read.csv("online_shoppers_intention.csv")
 ```
+
+```{r}
+ggplot(shop, aes(x = Administrative_Duration, y = Administrative))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+```{r}
+ggplot(shop, aes(x = Informational_Duration, y = Informational))  +
+  geom_jitter(height = 0.25, size = 0.4)
+```
+
+
+```{r}
+ggplot(shop, aes(x = ProductRelated_Duration, y = ProductRelated))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+```{r}
+ggplot(shop, aes(x = Administrative_Duration, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+```{r}
+ggplot(shop, aes(x = Administrative, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+
+```{r}
+ggplot(shop, aes(x = Informational_Duration, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+
+```{r}
+ggplot(shop, aes(x = Informational, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+
+```{r}
+ggplot(shop, aes(x = ProductRelated_Duration, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+```{r}
+ggplot(shop, aes(x = ProductRelated, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+```{r}
+ggplot(shop, aes(x = BounceRates, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+  # geom_point()
+```
+
+
+```{r}
+ggplot(shop, aes(x = ExitRates, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+```{r}
+ggplot(shop, aes(x = PageValues, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+```{r}
+ggplot(shop, aes(x = SpecialDay, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+```{r}
+ggplot(shop, aes(x = OperatingSystems, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+```{r}
+ggplot(shop, aes(x = Browser, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+```{r}
+ggplot(shop, aes(x = TrafficType, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+```{r}
+ggplot(shop, aes(x = VisitorType, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+```{r}
+ggplot(shop, aes(x = Weekend, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+```{r}
+ggplot(shop, aes(x = Month, y = Revenue))  +
+  geom_jitter(height = 0.25, size=0.4)
+```
+
+
 
 
