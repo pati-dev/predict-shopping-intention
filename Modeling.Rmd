@@ -1,0 +1,72 @@
+---
+title: "Modeling"
+author: "Ankit Mathur"
+date: "2/27/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, tidy = TRUE, warning = FALSE)
+```
+
+```{r include=FALSE}
+library(tidyverse)
+cb_palette = c("#F0E442", "#56B4E9", "#009E73", "#0072B2", "#D55E00", "#CC79A7", "#E69F00", "#999999")
+```
+
+```{r}
+shop = read.csv("online_shoppers_intention.csv")
+```
+
+```{r}
+library(GGally)
+pages <- c("Administrative", "Administrative_Duration",
+           "Informational", "Informational_Duration",
+           "ProductRelated", "ProductRelated_Duration")
+page.views = shop[pages]
+ggpairs(page.views)
+```
+
+```{r}
+page.views.pca = prcomp(page.views, scale. = TRUE)
+```
+
+```{r}
+page.views.pca$rotation[, 1:6]
+```
+
+```{r}
+dim(page.views.pca$x)
+```
+
+```{r}
+biplot(page.views.pca, scale = 0)
+```
+
+```{r}
+# Compute std dev of each PC
+std.dev <- page.views.pca$sdev
+
+# Compute variance
+pc.var <- std.dev^2
+
+# Compute proportion of variance explained by each PC
+prop.var <- pc.var/sum(pc.var)
+
+prop.var[1:6]
+```
+
+## The first, second, and third PCs combined explain more than 83% variance in the original page views data.
+
+```{r}
+plot(cumsum(prop.var),
+     xlab = "# of principal components",
+     ylab = "Cumulative proportion of explained variance",
+     type = "b")
+```
+
+```{r}
+
+```
+
+
